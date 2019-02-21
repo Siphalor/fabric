@@ -17,13 +17,16 @@
 package net.fabricmc.fabric.mixin.client.render;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Map;
 
+@Mixin(ArmorFeatureRenderer.class)
 public class MixinArmorFeatureRenderer {
 	@Shadow
 	private static final Map<String, Identifier> ARMOR_TEXTURE_CACHE = Maps.newHashMap();
